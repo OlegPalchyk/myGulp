@@ -15,7 +15,9 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     babel = require('gulp-babel'),
     strip = require('gulp-strip-comments');
-    filter = require('gulp-filter');
+    filter = require('gulp-filter'),
+    plumber = require('gulp-plumber'),
+    gutil = require('gulp-util');
 
 
 var app = './app';
@@ -23,6 +25,12 @@ var dist = 'dist';
 var autoprefixerOptions = {
     browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
 };
+
+function handleError(err) {
+    console.log(err.toString());
+    this.emit('end');
+}
+
 
 
 ////////MAIN TASK/////////
@@ -50,6 +58,7 @@ gulp.task('browserSync', function () {
             baseDir: app
         }
     })
+
 });
 
 //install all from bower.json -> dependencies to html
@@ -64,8 +73,12 @@ gulp.task('bower', function () {
 
 //SASS to CSS with prefixes
 gulp.task('sass', function () {
+
     return gulp.src(app + '/scss/main.scss')
-        .pipe(sass())
+        // .pipe(plumber({
+        //     errorHandler: onError
+        // }))
+        .pipe(sass().on('error', handleError))
         .pipe(autoprefixer(autoprefixerOptions))
         .pipe(gulp.dest(app + '/css'))
         .pipe(browserSync.reload({

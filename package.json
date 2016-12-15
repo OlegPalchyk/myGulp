@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,12 +23,14 @@
     "gulp-filter": "^4.0.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.1.1",
+    "gulp-plumber": "^1.1.0",
     "gulp-rev": "^7.1.2",
     "gulp-rev-replace": "^0.4.3",
     "gulp-sass": "^3.0.0",
     "gulp-strip-comments": "^2.4.3",
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.1.2",
+    "gulp-util": "^3.0.7",
     "run-sequence": "^1.2.2",
     "wiredep": "^4.0.0"
   }
