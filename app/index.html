@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>CLEAN Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- build:css css/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower/reset-css/reset.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower/angular/angular.js"></script>
+    <script src="bower/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="js/main.js"></script>
+    <script src="js/config,js.js"></script>
+    <script src="js/controllers/mainCtrl.js"></script>
+    <!-- endbuild -->
+
+</head>
+
+
+<body ng-controller="mainCtrl">
+<header ng-include="'views/particles/header.html'" class="main-header"></header>
+<section ng-view class="main-content"></section>
+<footer ng-include="'views/particles/footer.html'" class="main-footer"></footer>
+
+<!--Some somments-->
+</body>
+</html>

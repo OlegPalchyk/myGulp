@@ -1,0 +1,1 @@
+"use strict";var app=angular.module("mainApp",["ngRoute"]);app.config(["$routeProvider",function(e){e.when("/",{templateUrl:"views/home.html"}).otherwise({redirectTo:"/"})}]),app.controller("mainCtrl",["$scope",function(e){e.text="some test rrr";var r=["hello",2];e.aa=r[0]}]);

@@ -1,0 +1,25 @@
+{
+  "name": "my_gulp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "OlegPalchyk <olegpalchyk@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-route": "^1.6.0",
+    "reset-css": "^2.2.0",
+    "font-awesome": "^4.7.0"
+  }
+}
