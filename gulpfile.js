@@ -14,10 +14,10 @@ var gulp = require('gulp'),
     revReplace = require('gulp-rev-replace'),
     sass = require('gulp-sass'),
     babel = require('gulp-babel'),
-    strip = require('gulp-strip-comments');
+    strip = require('gulp-strip-comments'),
     filter = require('gulp-filter'),
-    plumber = require('gulp-plumber'),
-    gutil = require('gulp-util');
+    plumber = require('gulp-plumber');
+
 
 
 var app = './app';
@@ -26,7 +26,7 @@ var autoprefixerOptions = {
     browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
 };
 
-function handleError(err) {
+function reportError(err) {
     console.log(err.toString());
     this.emit('end');
 }
@@ -75,10 +75,8 @@ gulp.task('bower', function () {
 gulp.task('sass', function () {
 
     return gulp.src(app + '/scss/main.scss')
-        // .pipe(plumber({
-        //     errorHandler: onError
-        // }))
-        .pipe(sass().on('error', handleError))
+        .pipe(plumber({errorHandler: reportError}))
+        .pipe(sass())
         .pipe(autoprefixer(autoprefixerOptions))
         .pipe(gulp.dest(app + '/css'))
         .pipe(browserSync.reload({
